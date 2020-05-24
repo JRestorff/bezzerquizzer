@@ -6,9 +6,8 @@
         
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
         <link rel="stylesheet" href="css/style.css">
-        <link rel="shortcut icon" type="image/png" href="img/favicon.png">
-        
-        <title>class="display">Bezzerquizzer</h1></title>
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png">        
+        <title>Bezzerquizzer</title>
     </head>
 
     <body>
@@ -19,35 +18,108 @@
             <div class="content">
                 <main class="board">
                     <div class="introduction">
-                        <p>Bezzerwizzer is a trivia game combining trivia and tactics. The game was invented in 2006 by the Dane Jesper Bülow. The name „Bezzerwizzer“ comes from the originally German term „Besserwisser“, meaning „know-it-all“.</p>
+                        <p>Bezzerquizzer is based on Bezzerwizzer, a trivia game combining trivia and tactics. The game was invented in 2006 by the Dane Jesper Bülow. The name „Bezzerwizzer“ comes from the originally German term „Besserwisser“, meaning „know-it-all“.</p>
                     </div>
                     <div class="questions">
                         <p>A new quiz game that never runs out of questions</p>
                         <button onclick="askQuestion()" type="button">Give me a question!</button>
                     </div>
-                    <img src="img/bezzerwizzer-board.jpg" alt="bezzerwizzer board" class="board-image">
+
+                    <div class="dummy-board">                        
+                        <div id="box-0" class="box-styling">
+                            Start
+                        </div>
+                        <div id="box-1" class="box-styling">
+                            1&nbsp; 
+                        </div>
+                        <div id="box-2" class="box-styling">
+                            2&nbsp; 
+                        </div>
+                        <div id="box-3" class="box-styling">
+                            3&nbsp; 
+                        </div>
+                        <div id="box-4" class="box-styling">
+                            4&nbsp; 
+                        </div>
+                        <div id="box-5" class="box-styling">
+                            5&nbsp; 
+                        </div>
+                        <div id="box-6" class="box-styling">
+                            6&nbsp; 
+                        </div>
+                        <div id="box-7" class="box-styling">
+                            7&nbsp; 
+                        </div>
+                        <div id="box-8" class="box-styling">
+                            8&nbsp; 
+                        </div>
+                        <div id="box-9" class="box-styling">
+                            9&nbsp; 
+                        </div>
+                        <div id="box-10" class="box-styling">
+                            10&nbsp; 
+                        </div>
+                        <div id="box-11" class="box-styling">
+                            11&nbsp; 
+                        </div>
+                        <div id="box-12" class="box-12 box-styling">
+                            12&nbsp; 
+                        </div>
+                        <div id="box-13" class="box-styling">
+                            13&nbsp; 
+                        </div>
+                        <div id="box-14" class="box-styling">
+                            14&nbsp; 
+                        </div>
+                        <div id="box-15" class="box-styling">
+                            15&nbsp; 
+                        </div>
+                        <div id="box-16" class="box-styling">
+                            16&nbsp; 
+                        </div>
+                        <div id="box-17" class="box-styling">
+                            17&nbsp; 
+                        </div>
+                        <div id="box-18" class="box-styling">
+                            18&nbsp; 
+                        </div>
+                        <div id="box-19" class="box-styling">
+                            19&nbsp; 
+                        </div>                        
+
+                        <p class="c1">Bezzerquizzer</p>
+                        <p class="c2">An Easy Game for Clever Quizzers</p>
+
+                        </div>
+                    </div>
+
+                    <div class="categories">
+                        <p>The questions are divided into 20 different categories, each built upon different topics (in alphabetical order):</p>
+
+                        <ul class="list-style">
+                            <li class="categories-list">Architecture (Buildings, Architects and Designers)</li>
+                            <li class="categories-list">Business World (Companies, Business People, Products, Trademarks and Advertisements)</li>
+                            <li class="categories-list">Communities (Legislation, Education, Labour market, Institutions and Associations)</li>
+                            <li class="categories-list">Design (Fashion, Furniture, Interiors, Household design, Logos and Symbols)</li>
+                            <li class="categories-list">Film (Titles, Actors, Directors and Roles)</li>
+                            <li class="categories-list">Food & Drink (Gastronomy, Wine, Beer, International Cuisine and Ingredients)</li>
+                            <li class="categories-list">Geography (Countries, Cities, Oceans and Seas)</li>
+                            <li class="categories-list">History (Historical persons, Places and Events)</li>
+                            <li class="categories-list">Humans (Physiology, Anatomy, Psychology, Medicine and Lifestyles)</li>
+                            <li class="categories-list">Language (Foreign languages, Foreign words, Idioms and Sayings)</li>
+                            <li class="categories-list">Literature (Titles, Authors, Philosophers and Literary Characters)</li>
+                            <li class="categories-list">Music (Artists, Composers, Titles and Concepts)</li>
+                            <li class="categories-list">Politics (Politicians, Parties, Organisations and Forms of Government)</li>
+                            <li class="categories-list">Science (Physics, Chemistry, Mathematics and Astronomy)</li>
+                            <li class="categories-list">Sports & Games (Athletes, Sports, Games and Records)</li>
+                            <li class="categories-list">Technology (Technology, Space Travel, Computers, Crafts and Tools)</li>
+                            <li class="categories-list">Tradition & Beliefs (Religion, Mythology, Traditions, Customs and Habits)</li>
+                            <li class="categories-list">TV & Radio (Programmes, News, People and Media Stories)</li>
+                        </ul>                        
+                    </div>
+                   
                 </main>
-                <aside class="categories">
-                    <p>The questions are divided into 20 different categories, each built upon different topics (in alphabetical order):</p>
-                    <li class="categories">Architecture (Buildings, Architects and Designers)</li>
-                    <li class="categories">Business World (Companies, Business People, Products, Trademarks and Advertisements)</li>
-                    <li class="categories">Communities (Legislation, Education, Labour market, Institutions and Associations)</li>
-                    <li class="categories">Design (Fashion, Furniture, Interiors, Household design, Logos and Symbols)</li>
-                    <li class="categories">Film (Titles, Actors, Directors and Roles)</li>
-                    <li class="categories">Food & Drink (Gastronomy, Wine, Beer, International Cuisine and Ingredients)</li>
-                    <li class="categories">Geography (Countries, Cities, Oceans and Seas)</li>
-                    <li class="categories">History (Historical persons, Places and Events)</li>
-                    <li class="categories">Humans (Physiology, Anatomy, Psychology, Medicine and Lifestyles)</li>
-                    <li class="categories">Language (Foreign languages, Foreign words, Idioms and Sayings)</li>
-                    <li class="categories">Literature (Titles, Authors, Philosophers and Literary Characters)</li>
-                    <li class="categories">Music (Artists, Composers, Titles and Concepts)</li>
-                    <li class="categories">Politics (Politicians, Parties, Organisations and Forms of Government)</li>
-                    <li class="categories">Science (Physics, Chemistry, Mathematics and Astronomy)</li>
-                    <li class="categories">Sports & Games (Athletes, Sports, Games and Records)</li>
-                    <li class="categories">Technology (Technology, Space Travel, Computers, Crafts and Tools)</li>
-                    <li class="categories">Tradition & Beliefs (Religion, Mythology, Traditions, Customs and Habits)</li>
-                    <li class="categories">TV & Radio (Programmes, News, People and Media Stories)</li>                    
-                </aside>
+                
             </div>
         </div>
         

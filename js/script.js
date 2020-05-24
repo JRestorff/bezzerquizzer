@@ -1,12 +1,15 @@
+
+var score = 0
+
+
 function askQuestion() {
-    var wrongAnswer = true
-    while (wrongAnswer) {
-      var answer = prompt("which quiz game is the best?")
-      if (answer == "bezzerquizzer") {
-        alert("that is correct!")
-        wrongAnswer = false
-      } else {
-        alert("that is wrong, try again!")
-      }
-    }
+  var answer = prompt("Which quiz game is the best?")
+  if (answer == "Bezzerquizzer") {
+    alert("That is correct!")
+    score += 1
+    document.getElementById('box-' + score).style.backgroundColor = "red"
+  } else {
+    alert("That is wrong, try again!")
   }
+  console.log(score)
+}

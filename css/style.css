@@ -45,9 +45,9 @@ Base */
   html {
     box-sizing: border-box;
     font-size: 62.5%; }
-    @media only screen and (max-width: 68.75em) {
+    @media only screen and (max-width: 68.75em /* = 1100px */) {
       html {
-        font-size: 50%; 
+        font-size: 55%; 
         } 
     }
   
@@ -69,17 +69,20 @@ Layout */
 .container {
     max-width: 100rem;
     margin: 8rem auto;
-    background-color: var(--color-grey-light-1);
+    background-color: var(--color-grey-light-2);
     box-shadow: var(--shadow-dark);    
 }
 
 .header {
     font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.5rem;
     height: 12rem;
     background-color: #fff;    
     display: flex;
     justify-content: center;
     align-items: center; 
+    text-transform: uppercase;
 }
 
 .content {
@@ -89,7 +92,7 @@ Layout */
 }
 
 .board {    
-    background-color: #fff;    
+    background-color: var(--color-grey-light-2);   
 }
 
 .introduction {
@@ -99,15 +102,18 @@ Layout */
 }
 
 .questions {    
-    max-width: var(--max-width);
-    margin: 0 auto;
-    margin-top: var(--margin-top-medium);
-    margin-bottom: var(--margin-bottom-medium);
+    max-width: var(--max-width);    
+    margin: var(--margin-top-medium) auto var(--margin-bottom-medium) auto;    
 }
 
 .categories {    
-    max-width: var(--max-width);
-    margin: 0rem auto;    
+    max-width: var(--max-width); 
+    margin: var(--margin-top-small) auto var(--margin-bottom-big) auto;
+    padding-bottom: 10rem;
+}
+
+.categories p {
+    margin-bottom: var(--margin-bottom-small);
 }
 
 
@@ -121,15 +127,16 @@ p {
 }
 
 li {
-    font-size: 1.4rem;
-    list-style: none;
+    font-size: 1.6rem;
+    line-height: 1.8;
+    list-style-type: square;
 }
 
 img {
     max-width: 100%;
     height: auto;
     margin-bottom: var(--margin-bottom-medium);
-
+    margin-top: var(--margin-top-big);
 }
 
 
@@ -138,7 +145,7 @@ button {
     text-transform: uppercase;
     text-decoration: none;
     font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
+    font-weight: 700;
     line-height: 1.6;
     color: white;
     background-color: var(--color-primary);    
@@ -147,3 +154,87 @@ button {
     border-radius: 7rem;
     transition: all .2s;   
 }
+
+button:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+
+/* Dummy board and boxes */
+
+.dummy-board {
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-gap: 2rem;
+    grid-template-areas: 
+    "five  six  seven  eight  nine  ten"
+    "four  .  . .  .  eleven"
+    "three  c-two  c-two  c-two  c-two  twelf"
+    "two  c-three  c-three  c-three  c-three  thirteen"
+    "one  .  .  .  .  fourteen"
+    "my-zero  nineteen  eighteen  seventeen  sixteen  fifteen";  
+    
+    color: white;
+    background-image: linear-gradient(var(--color-primary-dark), var(--color-primary-light), var(--color-primary-dark)); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 2.5rem;
+    border: 3px solid var(--color-black); 
+}
+
+.box-styling {
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    font-size: 1.4rem;
+    background-color: var(--color-black);
+    border-radius: 1.7rem;
+    border: 3px solid var(--color-grey-light-1);
+    width: 10rem;
+    height: 10rem;    
+}
+
+#box-0 { grid-area: my-zero; }
+#box-1 { grid-area: one; }
+#box-2 { grid-area: two; }
+#box-3 { grid-area: three; }
+#box-4 { grid-area: four; }
+#box-5 { grid-area: five; }
+#box-6 { grid-area: six; }
+#box-7 { grid-area: seven; }
+#box-8 { grid-area: eight; }
+#box-9 { grid-area: nine; }
+#box-10 { grid-area: ten; }
+#box-11 { grid-area: eleven; }
+#box-12 { grid-area: twelf; }
+#box-13 { grid-area: thirteen; }
+#box-14 { grid-area: fourteen; }
+#box-15 { grid-area: fifteen; }
+#box-16 { grid-area: sixteen; }
+#box-17 { grid-area: seventeen; }
+#box-18 { grid-area: eighteen; }
+#box-19 { grid-area: nineteen; }
+
+.c1 { 
+    grid-area: c-two;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 1.5rem;
+    text-transform: uppercase;
+
+}
+
+.c2 {
+    grid-area: c-three; 
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+
+
+
