@@ -25,20 +25,20 @@ function askQuestion() {
   var myCurrentAnswer = questions[currentQuestion].answer
   var answer = prompt(myCurrentQuestion)
   if (answer == myCurrentAnswer) {    
-    score += 1
-    document.getElementById('box-' + score).style.backgroundColor = "red" 
-    removeRed()
+    moveAhead()   
   } else {
     alert("That is wrong, try again!")
   }
   nextQuestion()
 }
 
-function removeRed() {
-  for (var i = 0; i < score; i++) {
-    document.getElementById('box-' + i).style.backgroundColor = "black"
-  }
+function moveAhead() {
+  document.getElementById('box-' + score).style.backgroundColor = "black"
+  score += 1
+  document.getElementById('box-' + score).style.backgroundColor = "red"  
 }
+
+
 
 function nextQuestion() {
   if (currentQuestion == numQuestions) {
@@ -47,3 +47,22 @@ function nextQuestion() {
     currentQuestion += 1
   }
 }
+
+/* Set up an event listener on the submit event, 
+which is sent when the user clicks the "Submit" button.
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio
+*/
+/* var form = document.querySelector("form");
+var log = document.querySelector("#log");
+
+form.addEventListener("submit", function(event) {
+  var data = new FormData(form);
+  var output = "";
+  for (const entry of data) {
+    output = entry[1];
+  };
+  log.innerText = output;
+  event.preventDefault();
+}, false);
+ */
+

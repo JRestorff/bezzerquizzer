@@ -20,7 +20,7 @@
                     <div class="introduction">
                         <p>Bezzerquizzer is based on Bezzerwizzer, a trivia game combining trivia and tactics. The game was invented in 2006 by the Dane Jesper Bülow. The name „Bezzerwizzer“ comes from the originally German term „Besserwisser“, meaning „know-it-all“.</p>
                     </div>
-                    <div class="questions">
+                    <div class="questions--give">
                         <p>A new quiz game that never runs out of questions</p>
                         <button onclick="askQuestion()" type="button">Give me a question!</button>
                     </div>
@@ -85,12 +85,36 @@
                         </div>
                         <div id="box-19" class="box-styling">
                             19&nbsp; 
-                        </div>                        
-
-                        <p class="c1">Bezzerquizzer</p>
-                        <p class="c2">An Easy Game for Clever Quizzers</p>
-
                         </div>
+                        
+                        <div class="c1">
+                            <form> 
+                                <div id="question" class="question">
+                                    <p>Who is the German chancellor?</p>
+                                </div>
+                                <div class="answer1">
+                                  <input type="radio" id="answer1" name="politician" value="Richtig">
+                                  <label for="answer1">Angela Merkel</label>
+                                </div>
+                                <div class="answer2">
+                                    <input type="radio" id="answer2" name="politician" value="Leider falsch">
+                                    <label for="answer2">Helmut Kohl</label>
+                                </div>
+                                <div class="answer3">
+                                    <input type="radio" id="answer3" name="politician" value="Leider falsch">
+                                    <label for="answer3">Donald Trump</label>
+                                </div>
+                                <div class="answer4">
+                                    <input type="radio" id="answer4" name="politician" value="Leider falsch">
+                                    <label for="answer4">Heiko Maas</label>
+                                </div>                              
+                                <div>
+                                  <button class="submit-question" type="submit">Submit</button>
+                                </div>
+                            </form>
+                            <pre id="log">
+                            </pre>    
+                        </div>                        
                     </div>
 
                     <div class="categories">
