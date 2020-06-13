@@ -22,7 +22,7 @@
                     </div>
                     <div class="questions--give">
                         <p>A new quiz game that never runs out of questions</p>
-                        <button onclick="askQuestion()" type="button">Give me a question!</button>
+                        <button type="button" id="start-game">Start Game</button>
                     </div>
 
                     <div class="dummy-board">                        
@@ -90,28 +90,30 @@
                         <div class="c1">
                             <form> 
                                 <div id="question" class="question">
-                                    <p>Who is the German chancellor?</p>
+                                    <p id="question-text"></p>
                                 </div>
                                 <div class="answer1">
                                   <input type="radio" id="answer1" name="politician" value="Richtig">
-                                  <label for="answer1">Angela Merkel</label>
+                                  <label id="answer1-text" for="answer1"></label>
                                 </div>
                                 <div class="answer2">
                                     <input type="radio" id="answer2" name="politician" value="Leider falsch">
-                                    <label for="answer2">Helmut Kohl</label>
+                                    <label id="answer2-text" for="answer2"></label>
                                 </div>
                                 <div class="answer3">
                                     <input type="radio" id="answer3" name="politician" value="Leider falsch">
-                                    <label for="answer3">Donald Trump</label>
+                                    <label id="answer3-text" for="answer3"></label>
                                 </div>
                                 <div class="answer4">
                                     <input type="radio" id="answer4" name="politician" value="Leider falsch">
-                                    <label for="answer4">Heiko Maas</label>
-                                </div>                              
-                                <div>
-                                  <button class="submit-question" type="submit">Submit</button>
-                                </div>
+                                    <label id="answer4-text" for="answer4"></label>
+                                </div>                                
                             </form>
+
+                            <div>
+                                <button id="question-submitter" class="submit-question">Submit</button>
+                              </div>
+
                             <pre id="log">
                             </pre>    
                         </div>                        

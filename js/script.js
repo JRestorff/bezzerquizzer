@@ -6,15 +6,18 @@ var currentQuestion = 0
 var questions = [
   {
     question: "Who is the German chancelor?",
-    answer: "Angela Merkel",
+    answers: ["Angela Merkel", "Helmut Kohl", "Donald Trump", "Heiko Maas"],
+    rightAnswer: 0,
   },
   {
     question: "What is the German capital?",
-    answer: "Berlin",
+    answers: ["München", "Berlin", "Düsseldorf", "Bonn"],
+    rightAnswer: 1,
   },
   {
     question: "What is the most beautiful color in the world?",
-    answer: "Blue",
+    answers: ["Red", "Green", "Blue", "Yellow"],
+    rightAnswer: 2,
   },
 ]
 
@@ -39,7 +42,6 @@ function moveAhead() {
 }
 
 
-
 function nextQuestion() {
   if (currentQuestion == numQuestions) {
     currentQuestion = 0
@@ -48,21 +50,20 @@ function nextQuestion() {
   }
 }
 
-/* Set up an event listener on the submit event, 
-which is sent when the user clicks the "Submit" button.
-https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/radio
-*/
-/* var form = document.querySelector("form");
-var log = document.querySelector("#log");
+function displayQuestion() {
+  var question = questions[currentQuestion].question
+  document.getElementById("question-text").innerHTML = question
+  var answers = questions[currentQuestion].answers
+  for (var i = 1; i < 5; i++) {
+    var x = i - 1
+    document.getElementById("answer" + i + "-text").innerHTML = answers[x]
+  }
+}
 
-form.addEventListener("submit", function(event) {
-  var data = new FormData(form);
-  var output = "";
-  for (const entry of data) {
-    output = entry[1];
-  };
-  log.innerText = output;
-  event.preventDefault();
-}, false);
- */
+function submitAnswer() {
+  nextQuestion()
+  displayQuestion()
+}
 
+document.getElementById("start-game").addEventListener("click", displayQuestion)
+document.getElementById("question-submitter").addEventListener("click", submitAnswer)
