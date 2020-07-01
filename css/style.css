@@ -56,7 +56,6 @@ html {
     line-height: 1.6;
     color: var(--color-grey-dark-2);
     background-image: linear-gradient(to right bottom, var(--color-primary-light-x), var(--color-primary-light));
-    /* background-image: linear-gradient(to right bottom, var(--color-primary-light), var(--color-primary-dark)); */
     background-size: cover;
     background-repeat: no-repeat;    
 }
@@ -74,6 +73,10 @@ Layout */
     margin: 8rem auto;
     background-color: var(--color-grey-light-2);
     box-shadow: var(--shadow-dark);    
+}
+
+.content {
+    padding: 5rem;
 }
 
 .header {
@@ -219,28 +222,45 @@ button:hover {
 
 .c1 {
     grid-area: c-one;     
-    background-color: white;
-    padding: 5rem;
+    background-color: var(--color-grey-light-4);
+    padding: 3rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 15%);
+    gap: 4rem;
+    justify-items: center;
+    align-items: center;
 }
 
 .question {
     grid-column: 1 / -1;
-    grid-row: 1; 
-    color: var(--color-grey-dark-2); 
+    grid-row: 1;     
     font-size: 2rem;
-    font-weight: 700;  
+    font-family: inherit;
+    font-weight: 700;
+    color: var(--color-black);
 }
 
-form {
+.input__radio--buttons {
     display: contents;
 }
 
-label {
-    color: var(--color-grey-dark-2); 
+.answer {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-black);
+    padding: 1rem 2rem;
+    background-color: white;
+    border-radius: 2rem;
+    border: none; 
+    min-width: 15rem;   
 }
+
+.answer:focus {
+    outline: none;
+    box-shadow: var(--shadow-dark);
+}
+
 
 .answer1 {
     grid-column: 1;
@@ -325,8 +345,7 @@ Media Queries */
         grid-gap: 2rem;
         justify-items: center;
         grid-template-areas: 
-        "c-two"
-        "c-three"
+        "c-one"
         "my-zero"
         "one"
         "two"
@@ -355,25 +374,14 @@ Media Queries */
     }
 
     .c1 { 
-        grid-area: c-two;        
+        grid-area: c-one;        
         font-size: 2rem;
-        letter-spacing: 0.2rem;      
-    }
+        letter-spacing: 0.2rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, 1fr);
+    }    
     
-    .c2 {
-        font-size: 1.5rem;
-        margin-bottom: var(--margin-bottom-medium);
-    }
 
 }
-
-@media screen and (min-width: 900px) {
-    .content {
-        display: flex;
-        flex-wrap: wrap; 
-        padding: 5rem;
-    }
-}
-
-
 

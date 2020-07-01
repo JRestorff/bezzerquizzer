@@ -25,6 +25,7 @@
                         <button type="button" id="start-game">Start Game</button>
                     </div>
 
+                    <!-- Board -->
                     <div class="dummy-board">                        
                         <div id="box-0" class="box-styling">
                             Start
@@ -86,39 +87,41 @@
                         <div id="box-19" class="box-styling">
                             19&nbsp; 
                         </div>
-                        
+
+                        <!-- Questions -->
                         <div class="c1">
-                            <form> 
+                            <div class="input__radio--buttons">
                                 <div id="question" class="question">
                                     <p id="question-text"></p>
                                 </div>
-                                <div class="answer1">
-                                  <input type="radio" id="answer1" name="politician" value="Richtig">
-                                  <label id="answer1-text" for="answer1"></label>
+                                <div class="answer answer1">
+                                    <input type="checkbox" id="answer1" name="politician" >
+                                    <label id="answer1-text" for="answer1"></label>
                                 </div>
-                                <div class="answer2">
-                                    <input type="radio" id="answer2" name="politician" value="Leider falsch">
+                                <div class="answer answer2">
+                                    <input type="checkbox" id="answer2" name="politician" >
                                     <label id="answer2-text" for="answer2"></label>
                                 </div>
-                                <div class="answer3">
-                                    <input type="radio" id="answer3" name="politician" value="Leider falsch">
+                                <div class="answer answer3">
+                                    <input type="checkbox" id="answer3" name="politician" >
                                     <label id="answer3-text" for="answer3"></label>
                                 </div>
-                                <div class="answer4">
-                                    <input type="radio" id="answer4" name="politician" value="Leider falsch">
+                                <div class="answer answer4">
+                                    <input type="checkbox" id="answer4" name="politician" >
                                     <label id="answer4-text" for="answer4"></label>
                                 </div>                                
-                            </form>
+                            </div>                            
 
-                            <div>
-                                <button id="question-submitter" class="submit-question">Submit</button>
-                              </div>
+                            <div class="submit-question">
+                                <button id="question-submitter" disabled>Submit</button>
+                            </div>
 
                             <pre id="log">
                             </pre>    
                         </div>                        
                     </div>
 
+                    <!-- Explanation categories -->
                     <div class="categories">
                         <p>The questions are divided into 20 different categories, each built upon different topics (in alphabetical order):</p>
 

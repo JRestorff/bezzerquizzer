@@ -3,6 +3,8 @@ var score = 0
 
 var currentQuestion = 0
 
+var currentAnswer
+
 var questions = [
   {
     question: "Who is the German chancelor?",
@@ -51,8 +53,10 @@ function nextQuestion() {
 }
 
 function displayQuestion() {
-  var question = questions[currentQuestion].question
-  document.getElementById("question-text").innerHTML = question
+  // Display the question.
+  var questionText = questions[currentQuestion].question
+  document.getElementById("question-text").innerHTML = questionText
+  // Display the answers.
   var answers = questions[currentQuestion].answers
   for (var i = 1; i < 5; i++) {
     var x = i - 1
@@ -61,9 +65,61 @@ function displayQuestion() {
 }
 
 function submitAnswer() {
+  console.log("current: " + currentAnswer)
+  console.log("correct: " + questions[currentQuestion].rightAnswer)
+  if (currentAnswer == questions[currentQuestion].rightAnswer) {
+    moveAhead()
+  }
   nextQuestion()
+  uncheckAll()
   displayQuestion()
 }
 
+function uncheckAll() {  
+  for (var i = 1; i < 5; i++) {    
+    document.getElementById("answer" + i).checked = false
+  }
+}
+
+function uncheckOthers(currentClick) {
+  for (var i = 1; i < 5; i++) {
+    if (i != currentClick) {
+      document.getElementById("answer" + i).checked = false
+    }    
+  }
+}
+
+function makeButtonClickable() {
+  var checkedAnswer = false
+  for (var i = 1; i < 5; i++) {    
+    if (document.getElementById("answer" + i).checked) {
+      checkedAnswer = true
+    }
+  }
+  document.getElementById("question-submitter").disabled = !checkedAnswer
+}
+
+
 document.getElementById("start-game").addEventListener("click", displayQuestion)
 document.getElementById("question-submitter").addEventListener("click", submitAnswer)
+
+document.getElementById("answer1").addEventListener("click", function() {
+  uncheckOthers(1)
+  makeButtonClickable()
+  currentAnswer = 0
+})
+document.getElementById("answer2").addEventListener("click", function() {
+  uncheckOthers(2)
+  makeButtonClickable()
+  currentAnswer = 1
+})
+document.getElementById("answer3").addEventListener("click", function() {
+  uncheckOthers(3)
+  makeButtonClickable()
+  currentAnswer = 2
+})
+document.getElementById("answer4").addEventListener("click", function() {
+  uncheckOthers(4)
+  makeButtonClickable()
+  currentAnswer = 3
+})
