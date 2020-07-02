@@ -26,11 +26,11 @@ var questions = [
 var numQuestions = questions.length - 1
 
 function askQuestion() {
-  var myCurrentQuestion = questions[currentQuestion].question  
+  var myCurrentQuestion = questions[currentQuestion].question
   var myCurrentAnswer = questions[currentQuestion].answer
   var answer = prompt(myCurrentQuestion)
-  if (answer == myCurrentAnswer) {    
-    moveAhead()   
+  if (answer == myCurrentAnswer) {
+    moveAhead()
   } else {
     alert("That is wrong, try again!")
   }
@@ -40,14 +40,14 @@ function askQuestion() {
 function moveAhead() {
   document.getElementById('box-' + score).style.backgroundColor = "black"
   score += 1
-  document.getElementById('box-' + score).style.backgroundColor = "red"  
+  document.getElementById('box-' + score).style.backgroundColor = "red"
 }
 
 
 function nextQuestion() {
   if (currentQuestion == numQuestions) {
     currentQuestion = 0
-  }  else {
+  } else {
     currentQuestion += 1
   }
 }
@@ -72,11 +72,12 @@ function submitAnswer() {
   }
   nextQuestion()
   uncheckAll()
+  makeButtonClickable()
   displayQuestion()
 }
 
-function uncheckAll() {  
-  for (var i = 1; i < 5; i++) {    
+function uncheckAll() {
+  for (var i = 1; i < 5; i++) {
     document.getElementById("answer" + i).checked = false
   }
 }
@@ -85,13 +86,13 @@ function uncheckOthers(currentClick) {
   for (var i = 1; i < 5; i++) {
     if (i != currentClick) {
       document.getElementById("answer" + i).checked = false
-    }    
+    }
   }
 }
 
 function makeButtonClickable() {
   var checkedAnswer = false
-  for (var i = 1; i < 5; i++) {    
+  for (var i = 1; i < 5; i++) {
     if (document.getElementById("answer" + i).checked) {
       checkedAnswer = true
     }
@@ -103,22 +104,22 @@ function makeButtonClickable() {
 document.getElementById("start-game").addEventListener("click", displayQuestion)
 document.getElementById("question-submitter").addEventListener("click", submitAnswer)
 
-document.getElementById("answer1").addEventListener("click", function() {
+document.getElementById("answer1").addEventListener("click", function () {
   uncheckOthers(1)
   makeButtonClickable()
   currentAnswer = 0
 })
-document.getElementById("answer2").addEventListener("click", function() {
+document.getElementById("answer2").addEventListener("click", function () {
   uncheckOthers(2)
   makeButtonClickable()
   currentAnswer = 1
 })
-document.getElementById("answer3").addEventListener("click", function() {
+document.getElementById("answer3").addEventListener("click", function () {
   uncheckOthers(3)
   makeButtonClickable()
   currentAnswer = 2
 })
-document.getElementById("answer4").addEventListener("click", function() {
+document.getElementById("answer4").addEventListener("click", function () {
   uncheckOthers(4)
   makeButtonClickable()
   currentAnswer = 3
