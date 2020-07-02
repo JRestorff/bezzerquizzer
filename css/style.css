@@ -92,7 +92,7 @@ Layout */
 }
 
 .board {    
-    background-color: var(--color-grey-light-2);   
+    background-color: var(--color-grey-light-2);  
 }
 
 .introduction {
@@ -104,12 +104,13 @@ Layout */
 .questions--give {    
     max-width: var(--max-width);    
     margin: var(--margin-top-medium) auto var(--margin-bottom-medium) auto;    
+    display: grid;
+    justify-items: center;     
 }
 
 .categories {    
     max-width: var(--max-width); 
-    margin: var(--margin-top-small) auto var(--margin-bottom-big) auto;
-    padding-bottom: 10rem;
+    margin: var(--margin-top-small) auto var(--margin-bottom-small) auto;    
 }
 
 .categories p {
@@ -139,7 +140,8 @@ img {
 
 
 button {
-    margin-top: var(--margin-top-small);
+    margin-top: var(--margin-top-medium);
+    margin-bottom: var(--margin-bottom-medium);
     text-transform: uppercase;
     text-decoration: none;
     font-family: 'Open Sans', sans-serif;
@@ -148,10 +150,10 @@ button {
     line-height: 1.6;
     color: white;
     background-color: var(--color-primary);    
-    letter-spacing: 1px;
+    letter-spacing: 1px;    
     padding: 0.5rem 1.8rem;
     border-radius: 7rem;
-    transition: all .2s;   
+    transition: all .2s;      
 }
 
 button:hover {
@@ -166,6 +168,8 @@ button:hover {
 /* Dummy board and boxes */
 
 .dummy-board {
+    margin-top: var(--margin-top-medium);
+    margin-bottom: var(--margin-bottom-medium);
     padding: 2rem;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -224,12 +228,14 @@ button:hover {
     grid-area: c-one;     
     background-color: var(--color-grey-light-4);
     padding: 3rem;
+    margin: 3rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(5, 15%);
     gap: 4rem;
     justify-items: center;
     align-items: center;
+    border-radius: 2.5rem;
 }
 
 .question {
@@ -329,16 +335,29 @@ Media Queries */
 
     .container {
         max-width: 90vw; 
-        margin: 4rem auto;              
+        margin: 2rem auto;        
+    }
+
+    .content {
+        padding: 4rem 2rem;
+    }
+
+    .board {    
+        background-color: white; 
+        padding: 1rem;        
     }
 
     .introduction {
         margin-top: var(--margin-top-medium);     
     }
 
+    button {
+        margin-top: var(--margin-top-small);
+        margin-bottom: var(--margin-bottom-small);        
+    }
+
     .dummy-board {        
-        padding: 2rem;
-        margin: 2rem;
+        padding: 2rem;        
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: auto;        
@@ -378,10 +397,58 @@ Media Queries */
         font-size: 2rem;
         letter-spacing: 0.2rem;
         display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(5, 1fr);
+        grid-template-columns: 1fr;        
+        grid-template-rows: auto;
+        gap: 1rem;        
+    }  
+    
+    .question {
+        grid-column: 1;
+        grid-row: 1; 
+        text-align: center;
+        margin-bottom: var(--margin-bottom-small);            
+    }
+    
+    .input__radio--buttons {
+        display: contents;
+    }
+    
+    .answer {        
+        width: 20rem;   
     }    
     
+    .answer1 {
+        grid-column: 1;
+        grid-row: 2; 
+    }
+    
+    .answer2 {
+        grid-column: 1;
+        grid-row: 3; 
+    }
+    
+    .answer3 {
+        grid-column: 1;
+        grid-row: 4; 
+    }
+    
+    .answer4 {
+        grid-column: 1;
+        grid-row: 5; 
+    }
+    
+    .submit-question {
+        grid-column: 1;
+        grid-row: 6; 
+    }
+    
+    #log {
+        grid-column: 1;
+        grid-row: 7;         
+    }
 
+    .categories {                
+        padding-bottom: 0;
+    }
 }
 
