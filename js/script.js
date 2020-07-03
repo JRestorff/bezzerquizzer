@@ -21,6 +21,106 @@ var questions = [
     answers: ["Red", "Green", "Blue", "Yellow"],
     rightAnswer: 2,
   },
+  {
+    question: "In what year was Tom Hanks born?",
+    answers: [
+      1942,
+      1968,
+      1956,
+      1971
+    ],
+    rightAnswer: 2
+  },
+  {
+    question: "What year was King Vidor born in?",
+    answers: [
+      1894,
+      1906,
+      1880,
+      1883
+    ],
+    rightAnswer: 0
+  },
+  {
+    question: "In which year was Nicole Kidman born?",
+    answers: [
+      1987,
+      1974,
+      1989,
+      1967
+    ],
+    rightAnswer: 3
+  },
+  {
+    question: "In which year was Jennifer Lopez born?",
+    answers: [
+      1964,
+      1965,
+      1956,
+      1969
+    ],
+    rightAnswer: 3
+  },
+  {
+    question: "What year was Adriano Giannini born in?",
+    answers: [
+      1941,
+      1980,
+      1971,
+      1994
+    ],
+    rightAnswer: 2
+  },
+  {
+    question: "What was the year in which King Vidor died?",
+    answers: [
+      1960,
+      1986,
+      1982,
+      2005
+    ],
+    rightAnswer: 2
+  },
+  {
+    question: "What year was Janet Jackson born in?",
+    answers: [
+      1939,
+      1965,
+      1966,
+      1959
+    ],
+    rightAnswer: 2
+  },
+  {
+    question: "In which year was Zbigniew Rybczynski born?",
+    answers: [
+      1949,
+      1937,
+      1943,
+      1968
+    ],
+    rightAnswer: 0
+  },
+  {
+    question: "In which year was Christine Lakin born?",
+    answers: [
+      1973,
+      1965,
+      1980,
+      1979
+    ],
+    rightAnswer: 3
+  },
+  {
+    question: "What year was Cicely Tyson born in?",
+    answers: [
+      1924,
+      1935,
+      1949,
+      1923
+    ],
+    rightAnswer: 0
+  }
 ]
 
 var numQuestions = questions.length - 1
