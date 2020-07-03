@@ -357,7 +357,7 @@ Media Queries */
     }
 
     .dummy-board {        
-        padding: 2rem;        
+        padding: 1rem;        
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: auto;        
@@ -399,7 +399,9 @@ Media Queries */
         display: grid;
         grid-template-columns: 1fr;        
         grid-template-rows: auto;
-        gap: 1rem;        
+        gap: 1rem;   
+        justify-self: center; 
+        max-width: 70vw;    
     }  
     
     .question {
