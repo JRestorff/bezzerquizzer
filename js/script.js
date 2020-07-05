@@ -152,6 +152,13 @@ function nextQuestion() {
   }
 }
 
+function makeQuestionVisible() {
+  var questionBox = document.getElementsByClassName('c1')[0].getElementsByTagName('*')
+  for (var i = 0; i < questionBox.length; i++) {
+    questionBox[i].style.visibility = 'visible'
+  }
+}
+
 function displayQuestion() {
   // Display the question.
   var questionText = questions[currentQuestion].question
@@ -162,6 +169,11 @@ function displayQuestion() {
     var x = i - 1
     document.getElementById("answer" + i + "-text").innerHTML = answers[x]
   }
+}
+
+function startGame() {
+  makeQuestionVisible()
+  displayQuestion()
 }
 
 function submitAnswer() {
@@ -201,7 +213,7 @@ function makeButtonClickable() {
 }
 
 
-document.getElementById("start-game").addEventListener("click", displayQuestion)
+document.getElementById("start-game").addEventListener("click", startGame)
 document.getElementById("question-submitter").addEventListener("click", submitAnswer)
 
 document.getElementById("answer1").addEventListener("click", function () {

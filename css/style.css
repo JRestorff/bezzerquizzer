@@ -235,7 +235,11 @@ button:hover {
     gap: 4rem;
     justify-items: center;
     align-items: center;
-    border-radius: 2.5rem;
+    border-radius: 2.5rem;    
+}
+
+.c1 * {
+    visibility: hidden;
 }
 
 .question {
@@ -244,7 +248,7 @@ button:hover {
     font-size: 2rem;
     font-family: inherit;
     font-weight: 700;
-    color: var(--color-black);
+    color: var(--color-black);    
 }
 
 .input__radio--buttons {
@@ -293,7 +297,7 @@ button:hover {
     grid-row: 4; 
 }
 
-#log {
+/* #log {
     grid-column: 1 / -1;
     grid-row: 5; 
     font-family: 'Open Sans', sans-serif;
@@ -301,7 +305,7 @@ button:hover {
     font-weight: 400;
     line-height: 1.6;
     color: var(--color-grey-dark-2);
-}
+} */
 
 
 
@@ -447,10 +451,10 @@ Media Queries */
         grid-row: 6; 
     }
     
-    #log {
+    /* #log {
         grid-column: 1;
         grid-row: 7;         
-    }
+    } */
 
     .categories {                
         padding-bottom: 0;
