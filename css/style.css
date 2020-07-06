@@ -103,7 +103,7 @@ Layout */
 
 .questions--give {    
     max-width: var(--max-width);    
-    margin: var(--margin-top-medium) auto var(--margin-bottom-medium) auto;    
+    margin: var(--margin-top-medium) auto var(--margin-bottom-small) auto;    
     display: grid;
     justify-items: center;     
 }
@@ -180,7 +180,7 @@ button:hover {
     "four  c-one  c-one  c-one  c-one eleven"
     "three  c-one  c-one  c-one  c-one  twelf"
     "two  c-one  c-one  c-one  c-one  thirteen"
-    "one  c-one  c-one  c-one  c-one  fourteen"
+    "one  .  .  .  .  fourteen"
     "my-zero  nineteen  eighteen  seventeen  sixteen  fifteen";  
     
     color: white;
@@ -227,12 +227,12 @@ button:hover {
 .c1 {
     grid-area: c-one;     
     background-color: var(--color-grey-light-4);
-    padding: 3rem;
+    padding: 2rem;
     margin: 3rem;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(5, 15%);
-    gap: 4rem;
+    grid-template-rows: repeat(4, 5rem);
+    gap: 2rem;
     justify-items: center;
     align-items: center;
     border-radius: 2.5rem;    
@@ -296,18 +296,6 @@ button:hover {
     grid-column: 1 / -1;
     grid-row: 4; 
 }
-
-/* #log {
-    grid-column: 1 / -1;
-    grid-row: 5; 
-    font-family: 'Open Sans', sans-serif;
-    font-size: 1.6rem;
-    font-weight: 400;
-    line-height: 1.6;
-    color: var(--color-grey-dark-2);
-} */
-
-
 
 
 
@@ -404,8 +392,8 @@ Media Queries */
         font-size: 2rem;
         letter-spacing: 0.2rem;
         display: grid;
-        grid-template-columns: 1fr;        
-        grid-template-rows: auto;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 8rem);
         gap: 1rem;   
         justify-self: center; 
         max-width: 70vw;    
