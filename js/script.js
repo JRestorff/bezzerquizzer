@@ -1,6 +1,8 @@
 
 var score = 0
 
+var winningScore = 20
+
 var currentQuestion = 0
 
 var currentAnswer
@@ -125,18 +127,6 @@ var questions = [
 
 var numQuestions = questions.length - 1
 
-function askQuestion() {
-  var myCurrentQuestion = questions[currentQuestion].question
-  var myCurrentAnswer = questions[currentQuestion].answer
-  var answer = prompt(myCurrentQuestion)
-  if (answer == myCurrentAnswer) {
-    moveAhead()
-  } else {
-    alert("That is wrong, try again!")
-  }
-  nextQuestion()
-}
-
 function moveAhead() {
   document.getElementById('box-' + score).style.backgroundColor = "black"
   score += 1
@@ -152,12 +142,26 @@ function nextQuestion() {
   }
 }
 
+
 function makeQuestionVisible() {
   var questionBox = document.getElementsByClassName('c1')[0].getElementsByTagName('*')
   for (var i = 0; i < questionBox.length; i++) {
     questionBox[i].style.visibility = 'visible'
   }
 }
+
+
+function declareWinner() {
+  var questionBox = document.getElementsByClassName('c1')[0].getElementsByTagName('*')
+  for (var i = 0; i < questionBox.length; i++) {
+    if (questionBox[i].id == "question-text") {
+      questionBox[i].innerHTML = "You won"
+    } else {
+      questionBox[i].style.visibility = 'hidden'
+    }    
+  }
+}
+
 
 function displayQuestion() {
   // Display the question.
@@ -171,10 +175,15 @@ function displayQuestion() {
   }
 }
 
+
 function startGame() {
+  score = 0
+  currentQuestion = 0  
   makeQuestionVisible()
   displayQuestion()
+  uncheckAll()
 }
+
 
 function submitAnswer() {
   console.log("current: " + currentAnswer)
@@ -182,17 +191,23 @@ function submitAnswer() {
   if (currentAnswer == questions[currentQuestion].rightAnswer) {
     moveAhead()
   }
-  nextQuestion()
-  uncheckAll()
-  makeButtonClickable()
-  displayQuestion()
+  if (score >= winningScore) {
+    declareWinner()
+  } else {
+    nextQuestion()
+    uncheckAll()
+    makeButtonClickable()
+    displayQuestion()
+  }  
 }
+
 
 function uncheckAll() {
   for (var i = 1; i < 5; i++) {
     document.getElementById("answer" + i).checked = false
   }
 }
+
 
 function uncheckOthers(currentClick) {
   for (var i = 1; i < 5; i++) {
@@ -201,6 +216,7 @@ function uncheckOthers(currentClick) {
     }
   }
 }
+
 
 function makeButtonClickable() {
   var checkedAnswer = false
