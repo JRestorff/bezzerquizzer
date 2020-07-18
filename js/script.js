@@ -1,7 +1,9 @@
 
+var gamePlaying = false
+
 var score = 0
 
-var winningScore = 20
+var winningScore = 3
 
 var currentQuestion = 0
 
@@ -160,6 +162,21 @@ function declareWinner() {
       questionBox[i].style.visibility = 'hidden'
     }    
   }
+  gamePlaying = false
+  controlStartGameButton()
+}
+
+function controlStartGameButton() {
+  if (gamePlaying) {
+    document.getElementById("start-game").classList.add('unclickable-button')
+    document.getElementById("start-game").classList.remove
+    ('clickable-button')    
+    document.getElementById("start-game").disabled = true
+  } else {
+    document.getElementById("start-game").classList.add('clickable-button')
+    document.getElementById("start-game").classList.remove('unclickable-button')  
+    document.getElementById("start-game").disabled = false  
+  }
 }
 
 
@@ -177,11 +194,13 @@ function displayQuestion() {
 
 
 function startGame() {
+  gamePlaying = true
   score = 0
   currentQuestion = 0  
   makeQuestionVisible()
   displayQuestion()
-  uncheckAll()
+  uncheckAll()  
+  controlStartGameButton()
 }
 
 
@@ -226,6 +245,13 @@ function makeButtonClickable() {
     }
   }
   document.getElementById("question-submitter").disabled = !checkedAnswer
+  if (checkedAnswer) {
+    document.getElementById("question-submitter").classList.add('clickable-button')
+    document.getElementById("question-submitter").classList.remove('unclickable-button')    
+  } else {
+    document.getElementById("question-submitter").classList.add('unclickable-button')
+    document.getElementById("question-submitter").classList.remove('clickable-button')    
+  }
 }
 
 
