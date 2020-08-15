@@ -13,7 +13,7 @@ var questions = [
   {
     question: "Who is the German chancelor?",
     answers: ["Angela Merkel", "Helmut Kohl", "Donald Trump", "Heiko Maas"],
-    rightAnswer: 0,
+    rightAnswer: 0,        
   },
   {
     question: "What is the German capital?",
@@ -163,20 +163,7 @@ function declareWinner() {
     }    
   }
   gamePlaying = false
-  controlStartGameButton()
-}
-
-function controlStartGameButton() {
-  if (gamePlaying) {
-    document.getElementById("start-game").classList.add('unclickable-button')
-    document.getElementById("start-game").classList.remove
-    ('clickable-button')    
-    document.getElementById("start-game").disabled = true
-  } else {
-    document.getElementById("start-game").classList.add('clickable-button')
-    document.getElementById("start-game").classList.remove('unclickable-button')  
-    document.getElementById("start-game").disabled = false  
-  }
+  toggleButtonClickability("start-game", true)
 }
 
 
@@ -200,7 +187,7 @@ function startGame() {
   makeQuestionVisible()
   displayQuestion()
   uncheckAll()  
-  controlStartGameButton()
+  toggleButtonClickability("start-game", false)
 }
 
 
@@ -243,17 +230,20 @@ function makeButtonClickable() {
     if (document.getElementById("answer" + i).checked) {
       checkedAnswer = true
     }
-  }
-  document.getElementById("question-submitter").disabled = !checkedAnswer
-  if (checkedAnswer) {
-    document.getElementById("question-submitter").classList.add('clickable-button')
-    document.getElementById("question-submitter").classList.remove('unclickable-button')    
-  } else {
-    document.getElementById("question-submitter").classList.add('unclickable-button')
-    document.getElementById("question-submitter").classList.remove('clickable-button')    
-  }
+  }  
+  toggleButtonClickability("question-submitter", checkedAnswer)
 }
 
+function toggleButtonClickability(buttonID, clickable) {
+  document.getElementById(buttonID).disabled = !clickable
+  if (clickable) {
+    document.getElementById(buttonID).classList.add('clickable-button')
+    document.getElementById(buttonID).classList.remove('unclickable-button')    
+  } else {
+    document.getElementById(buttonID).classList.add('unclickable-button')
+    document.getElementById(buttonID).classList.remove('clickable-button')    
+  }
+}
 
 document.getElementById("start-game").addEventListener("click", startGame)
 document.getElementById("question-submitter").addEventListener("click", submitAnswer)
@@ -278,3 +268,12 @@ document.getElementById("answer4").addEventListener("click", function () {
   makeButtonClickable()
   currentAnswer = 3
 })
+
+
+const fetchTest = async () => {
+  const response = await fetch('http://localhost:3000/test')
+  const data = await response.json()
+  document.getElementById('fetchTextTest').innerHTML = data.answer
+}
+
+document.getElementById('fetch-test').addEventListener('click', fetchTest)
